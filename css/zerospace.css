@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'zerospaceregular';
+  src: url('../fonts/zerospace-regular-webfont.eot');
+}
+
+@font-face {
+  font-family: 'zerospaceregular';
+  src: url('../fonts/zerospace-regular-webfont.woff') format('woff'),
+       url('../fonts/zerospace-regular-webfont.ttf') format('truetype'),
+       url('../fonts/zerospace-regular-webfont.svg#zerospaceregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.zsf-parent {
+  font-family: "zerospaceregular";
+  /* set the font-size to 0 for a 100% compatibility */
+  font-size: 0;
+}
+
+.zsf-child {
+  /* reset font-face and font-size as you need */
+  font-family: sans-serif;
+  font-size: 10px;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+
+
+
+
+/* EYE CANDY */
+
+html {
+  font-family: sans-serif;
+  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
+  background-color: #d83131;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-title {
+  color: white;
+}
+
+.zsf-parent {
+  padding: 0 10px;
+     -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(0,0,0,0.25);
+}
+
+.box {
+  text-align: center;
+  min-height: 20em;
+  padding: 1em 0;
+  background-color: rgba(255,255,255,0.85);
+}
+
+/* LIGHT GRID METRICS */
+
+.row {
+  margin-bottom: 16px;
+}
+
+.col { 
+  padding: 0 10px;
+     -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(0,0,0,0.25);
+}
+
+.col--full {
+  width: 100%;
+}
+
+.col--1-12 {
+  width: 8.33%;
+}
+
+.col--2-6 {
+  width: 16.66%;
+}
+
+.col--1-3 {
+  width: 33.33%;
+}
