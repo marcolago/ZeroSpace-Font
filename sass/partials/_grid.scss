@@ -1,0 +1,274 @@
+/* ZERO-SPACE GRID ©marcolago 2014 */
+
+$f_body_stack:          sans-serif !default;
+$font-size_px:          18px !default;  
+$font-size_rem:         1rem !default;  
+$line-height:           1.3889 !default;
+$gutter_width_px:       $font-size_px !default;
+$gutter_width_rem:      $font-size_rem !default;
+$gutter_width:          1em !default;
+
+$micro_max:             320px;
+$small_max:             500px;
+$nomensland_max:        800px;
+$medium_max:            900px;
+
+$nomensland_min:        500px;
+$medium_min:            $small_max + 1px;
+$large_min:             $medium_max + 1px;
+
+$mq_micro_max:          #{"max-width:"} + $micro-max;
+$mq_small_max:          #{"max-width:"} + $small-max;
+$mq_nomensland_max:     #{"max-width:"} + $nomensland_max;
+$mq_medium_max:         #{"max-width:"} + $medium_max;
+
+$mq_nomensland_min:     #{"min-width:"} + $nomensland_min;
+$mq_medium_min:         #{"min-width:"} + $medium_min;
+$mq_large_min:          #{"min-width:"} + $large_min;
+
+// uncomment this block if you want to include support for Android 2.* and Safari 5
+// also include the ZeroSpace Font in your project 
+
+/*
+@font-face {
+  font-family: 'zerospaceregular';
+  src: url('zerospace-regular-webfont.eot');
+}
+
+@font-face {
+  font-family: 'zerospaceregular';
+  src: url('zerospace-regular-webfont.woff') format('woff'),
+       url('zerospace-regular-webfont.ttf') format('truetype'),
+       url('zerospace-regular-webfont.svg#zerospaceregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+.zsf-parent {
+  /* font-family: "zerospaceregular", sans-serif; */ // uncomment this line if you want to include support for Android 2.* and Safari 5
+  /* set the font-size to 0 for a 100% compatibility */
+  font-size: 0;
+}
+
+.zsf-child {
+  /* reset font-face and font-size as you need */
+  font-family: $f_body_stack;
+  font-size: $font-size_px;
+  font-size: $font-size_rem;
+  display: inline-block;
+}
+
+/* GRID */
+
+.grid,
+.grid__item,
+.grid__box {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.grid {
+  @extend .zsf-parent;
+  margin-left: -$gutter_width_px;
+  margin-left: -$gutter_width_rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  &>.grid {
+    margin-left: 0;
+  }
+}
+
+.grid.centered {
+  text-align: center;
+
+  & .grid__item {
+    text-align: left;
+  }
+}
+
+.grid.reversed {
+  direction: rtl;
+
+  & .grid__item {
+    direction: ltr;
+  }
+}
+
+.grid__item {
+  @extend .zsf-child;
+  width: 100%;
+  padding-left: $gutter_width;
+  vertical-align: top;
+  position: relative;
+}
+
+.grid__box {
+  width: 100%;
+  margin: 0;
+  margin-bottom: $line-height;
+  padding: 0;
+  position: relative;
+}
+
+@mixin large-sizes() {
+
+  .large--10-12 {
+    width: 10/12*100%
+  }
+
+  .large--3-4 {
+    width: 3/4*100%;
+  }
+
+  .large--2-3 {
+    width: 2/3*100%;
+  }
+
+  .large--7-12 {
+    width: 7/12*100%;
+  }
+
+  .large--1-2 {
+    width: 1/2*100%;
+  }
+
+  .large--1-3 {
+    width: 1/3*100%;
+  }
+
+  .large--1-4,
+  .large--3-12 {
+    width: 1/4*100%;
+  }
+
+  .large--1-5 {
+    width: 1/5*100%;
+  }
+
+  .large--1-6,
+  .large--2-12 {
+    width: 1/6*100%;
+  }
+
+  .large--1-12 {
+    width: 1/12*100%;
+  }
+
+  .large--push--1-6 {
+    left: 1/6*100%;
+  }
+
+  .large--push--1-12 {
+    left: 1/12*100%;
+  }
+
+  .large--4-10 {
+    width: 4/10*100%;
+  }
+
+  .large--6-10 {
+    width: 6/10*100%;
+  }
+
+}
+
+.no-opacity {
+
+  @include large-sizes();
+
+}
+
+@media screen and ($mq_large_min) {
+
+  @include large-sizes();
+
+}
+
+@media screen and ($mq_medium_max) and ($mq_medium_min) {
+
+  .medium--3-4 {
+    width: 3/4*100%;
+  }
+
+  .medium--2-3 {
+    width: 2/3*100%;
+  }
+
+  .medium--1-2 {
+    width: 1/2*100%;
+  }
+
+  .medium--1-3 {
+    width: 1/3*100%;
+  }
+
+  .medium--1-4 {
+    width: 1/4*100%;
+  }
+
+  .medium--1-5 {
+    width: 1/5*100%;
+  }
+
+  .medium--1-6 {
+    width: 1/6*100%;
+  }
+
+  .medium--push--1-12 {
+    left: 1/12*100%;
+  }
+
+  .medium--push--2-12 {
+    left: 2/12*100%;
+  }
+
+}
+
+@media screen and ($mq_nomensland_max) and ($mq_nomensland_min) {
+
+  .nml--1-2 {
+    width: 1/2*100%;
+  }
+
+  .nml--1-3 {
+    width: 1/3*100%;
+  }
+
+}
+
+@media screen and ($mq_small_max) {
+
+  .small--9-12 {
+    width: 9/12*100%;
+  }
+
+  .small--2-3 {
+    width: 2/3*100%;
+  }
+
+  .small--1-2 {
+    width: 1/2*100%;
+  }
+
+  .small--1-3 {
+    width: 1/3*100%;
+  }
+
+  .small--3-12 {
+    width: 3/12*100%;
+  }
+
+}
+
+@media screen and ($mq_micro_max) {
+
+  .micro--full {
+    width: 100%;
+  }
+
+}

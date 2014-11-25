@@ -21,7 +21,7 @@
 .zsf-child {
   /* reset font-face and font-size as you need */
   font-family: sans-serif;
-  font-size: 10px;
+  font-size: 16px;
   font-size: 1rem;
   display: inline-block;
 }
